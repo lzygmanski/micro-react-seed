@@ -6,6 +6,7 @@
   "repository": "git@github.com:lzygmanski/micro-react-seed.git",
   "author": "Lukasz Zygmanski <lzygmanski@gmail.com>",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "commit": "cz"
   },
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/config-lerna-scopes": "^11.0.0",
     "cz-lerna-changelog": "2.0.3",
     "husky": "^4.3.0",
