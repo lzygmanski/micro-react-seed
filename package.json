@@ -1,14 +1,20 @@
 {
   "name": "@lzygmanski/micro-react-seed",
   "version": "0.0.0",
-  "description": "Modular React Starter",
-  "main": "index.js",
-  "repository": "git@github.com:lzygmanski/micro-react-seed.git",
+  "description": "Micro react seed",
   "author": "Lukasz Zygmanski <lzygmanski@gmail.com>",
+  "homepage": "https://github.com/lzygmanski/micro-react-seed#readme",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lzygmanski/micro-react-seed.git"
+  },
   "scripts": {
-    "commit": "cz"
+    "commit": "cz",
+    "start": "lerna run start --",
+    "build": "lerna run build --",
+    "test": "lerna run --no-bail test --"
   },
   "workspaces": [
     "packages/*"
@@ -18,6 +24,14 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "bugs": {
+    "url": "https://github.com/lzygmanski/micro-react-seed/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
@@ -25,10 +39,5 @@
     "cz-lerna-changelog": "2.0.3",
     "husky": "^4.3.0",
     "lerna": "^3.22.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
-    }
   }
 }
