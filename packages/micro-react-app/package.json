@@ -13,8 +13,8 @@
     "url": "git+https://github.com/lzygmanski/micro-react-seed.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production",
+    "start": "webpack serve --mode development --env app",
+    "build": "webpack --mode production --env app",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
@@ -25,6 +25,9 @@
     "react-dom": "^16.14.0"
   },
   "devDependencies": {
-    "@lzygmanski/micro-react-config": "^0.0.0"
+    "@lzygmanski/micro-react-config": "^0.0.0",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.0.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }
