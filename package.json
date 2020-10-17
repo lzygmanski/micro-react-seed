@@ -12,8 +12,10 @@
   },
   "scripts": {
     "commit": "cz",
-    "start": "lerna run start --",
-    "build": "lerna run build --",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "start": "lerna run start --stream --",
+    "build": "lerna run build --stream --",
     "test": "lerna run --no-bail test --"
   },
   "workspaces": [
@@ -37,7 +39,16 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/config-lerna-scopes": "^11.0.0",
     "cz-lerna-changelog": "2.0.3",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.4",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "husky": "^4.3.0",
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "prettier": "^2.1.2"
   }
 }
