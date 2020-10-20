@@ -1,15 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import MicroReactModule from '@lzygmanski/micro-react-module';
 
-import "./App.css";
+import '@lzygmanski/micro-react-module/dist/main.css';
+import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <h1> Hello, World! </h1>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="app">
+    <h1>Hello from micro-rect-app!</h1>
+    <MicroReactModule />
+  </div>
+);
 
 export default App;

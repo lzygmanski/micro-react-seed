@@ -14,7 +14,7 @@
     "commit": "cz",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "start": "lerna run start --stream --",
+    "start": "lerna run start --parallel --",
     "build": "lerna run build --stream --",
     "test": "lerna run --no-bail test --"
   },
