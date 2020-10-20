@@ -1,7 +1,7 @@
 {
-  "name": "@lzygmanski/micro-react-app",
+  "name": "@lzygmanski/micro-react-module",
   "version": "0.0.0",
-  "description": "Micro react app",
+  "description": "Micro react module",
   "author": "Lukasz Zygmanski <lzygmanski@gmail.com>",
   "homepage": "https://github.com/lzygmanski/micro-react-seed#readme",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/lzygmanski/micro-react-seed.git"
   },
   "scripts": {
-    "start": "webpack serve --mode development",
+    "start": "webpack --watch --progress --mode development",
     "build": "webpack --mode production",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
@@ -25,13 +25,11 @@
     "url": "https://github.com/lzygmanski/micro-react-seed/issues"
   },
   "dependencies": {
-    "@lzygmanski/micro-react-module": "^0.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },
   "devDependencies": {
     "@lzygmanski/micro-react-config": "^0.0.0",
-    "html-webpack-plugin": "^4.5.0",
     "webpack": "^5.1.3",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"

@@ -1,34 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
-const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = (env = {}) => {
-  const { app } = env;
-
-  const defaultPlugins = [
-    new CleanWebpackPlugin(),
-    new PeerDepsExternalsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
-  ];
-
-  const appPlugins = [
-    ...defaultPlugins,
-    new HtmlWebpackPlugin({
-      template: path.resolve(process.cwd(), 'public/index.html'),
-      filename: 'index.html',
-    }),
-  ];
-
-  const modulePlugins = [...defaultPlugins];
+module.exports = (env, argv) => {
+  // eslint-disable-next-line
+  const isProduction = argv.mode === 'production';
 
   return {
     entry: './src/index.js',
     output: {
-      filename: '[name].bundle.js',
+      filename: '[name].js',
       path: path.resolve(process.cwd(), 'dist'),
       publicPath: '/',
       library: {
@@ -36,10 +19,12 @@ module.exports = (env = {}) => {
       },
     },
     devServer: {
+      contentBase: path.resolve(process.cwd(), 'dist'),
       historyApiFallback: true,
       host: '0.0.0.0',
       hot: true,
     },
+    devtool: 'inline-source-map',
     module: {
       rules: [
         {
@@ -51,15 +36,15 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader', 'postcss-loader'],
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
         },
         {
           test: /\.s[ac]ss$/i,
-          use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
         },
         {
           test: /\.less$/,
-          use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader'],
         },
         {
           test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
@@ -72,6 +57,17 @@ module.exports = (env = {}) => {
       ],
     },
     resolve: { extensions: ['*', '.js', '.jsx'] },
-    plugins: app ? appPlugins : modulePlugins,
+    plugins: [
+      new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+      }),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      }),
+    ],
+    optimization: {
+      minimizer: [`...`, new CssMinimizerPlugin()],
+    },
   };
 };
