@@ -1,11 +1,87 @@
 # `@lzygmanski/micro-react-config`
 
-> TODO: description
+> Simple config package for react applications and modules
 
 ## Usage
+
+### Babel config
+
+In your babel.config.js
+
+```
+const baseConfig = require('@lzygmanski/micro-react-config/lib/babel.config');
+
+module.exports = {
+  ...baseConfig,
+  // Your internal config
+};
+
+```
+
+### Postcss config
+
+In your postcss.config.js
+
+```
+const baseConfig = require('@lzygmanski/micro-react-config/lib/postcss.config');
+
+module.exports = {
+  ...baseConfig,
+  // Your internal config
+};
+
+```
+
+### Webpack config
+
+In your webpack.config.js
 
 ```
 const baseConfig = require('@lzygmanski/micro-react-config');
 
-// TODO: DEMONSTRATE API
+module.exports = (env, argv) => ({
+  ...baseConfig(env, argv),
+  // Your internal config
+});
+
+```
+
+Module config
+
+```
+const baseConfig = require('@lzygmanski/micro-react-config');
+
+module.exports = (env, argv) => ({
+  ...baseConfig(env, argv),
+  externals: {
+    react: 'react',
+    reactDOM: 'react-dom',
+  },
+});
+
+```
+
+Application config
+
+```
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const baseConfig = require('@lzygmanski/micro-react-config');
+
+module.exports = (env, argv) => {
+  const config = baseConfig(env, argv);
+
+  return {
+    ...config,
+    plugins: [
+      ...config.plugins,
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'public/index.html'),
+        filename: 'index.html',
+        title: process.env.APP_TITLE || 'My app',
+      }),
+    ],
+  };
+};
+
 ```

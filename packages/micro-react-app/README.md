@@ -1,5 +1,7 @@
 # `@lzygmanski/micro-react-app`
 
-> TODO: description
+> Simple application starter to embed your modules.
 
 ## Usage
+
+TODO

@@ -1,5 +1,9 @@
 # `@lzygmanski/micro-react-module`
 
-> TODO: description
+> Example module which can be embeded to applications.
 
 ## Usage
+
+While you developing new module, it need to be embeded to sample (shell) applications.
+
+TODO
