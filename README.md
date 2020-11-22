@@ -7,21 +7,21 @@
 
 `packages/micro-react-config`
 
-Basic config for all packages. Read more [packages/micro-react-config/README.md](here).
+Basic config for all packages. Read more [here](packages/micro-react-config/README.md).
 
 `packages/micro-react-app`
 
-Basic applications. Read more [packages/micro-react-app/README.md](here).
+Basic application. Read more [here](packages/micro-react-app/README.md).
 
 `packages/micro-react-module`
 
-Example module. Read more [packages/micro-react-module/README.md](here).
+Example module. Read more [here](packages/micro-react-module/README.md).
 
 ## Usage
 
 ### Small applications
 
-In this case you probably don't need to use `micro-ract-seed`. Use [https://github.com/facebook/create-react-app](create-react-app) instead.
+In this case you probably don't need to use `micro-ract-seed`. Use [create-react-app](https://github.com/facebook/create-react-app) instead.
 
 or
 

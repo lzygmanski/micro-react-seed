@@ -8,47 +8,44 @@
 
 In your babel.config.js
 
-```
+```js
 const baseConfig = require('@lzygmanski/micro-react-config/lib/babel.config');
 
 module.exports = {
   ...baseConfig,
   // Your internal config
 };
-
 ```
 
 ### Postcss config
 
 In your postcss.config.js
 
-```
+```js
 const baseConfig = require('@lzygmanski/micro-react-config/lib/postcss.config');
 
 module.exports = {
   ...baseConfig,
   // Your internal config
 };
-
 ```
 
 ### Webpack config
 
 In your webpack.config.js
 
-```
+```js
 const baseConfig = require('@lzygmanski/micro-react-config');
 
 module.exports = (env, argv) => ({
   ...baseConfig(env, argv),
   // Your internal config
 });
-
 ```
 
 Module config
 
-```
+```js
 const baseConfig = require('@lzygmanski/micro-react-config');
 
 module.exports = (env, argv) => ({
@@ -58,12 +55,11 @@ module.exports = (env, argv) => ({
     reactDOM: 'react-dom',
   },
 });
-
 ```
 
 Application config
 
-```
+```js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const baseConfig = require('@lzygmanski/micro-react-config');
@@ -83,5 +79,4 @@ module.exports = (env, argv) => {
     ],
   };
 };
-
 ```
