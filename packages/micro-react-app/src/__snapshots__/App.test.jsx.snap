@@ -7,6 +7,6 @@ exports[`App renders correctly 1`] = `
   <h1>
     Hello from micro-rect-app!
   </h1>
-  <Module />
+  <f />
 </div>
 `;
