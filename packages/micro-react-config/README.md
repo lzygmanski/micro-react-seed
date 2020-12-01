@@ -4,7 +4,7 @@
 
 ## Usage
 
-### Babel config
+### Jest config
 
 In your jest.config.js
 
