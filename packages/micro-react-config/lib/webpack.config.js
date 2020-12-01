@@ -25,7 +25,7 @@ module.exports = (env, argv) => {
       contentBase: path.resolve(process.cwd(), 'dist'),
       historyApiFallback: true,
       host: '0.0.0.0',
-      hot: true,
+      hotOnly: true,
     },
     devtool: 'inline-source-map',
     module: {

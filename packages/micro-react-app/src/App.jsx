@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -31,4 +32,4 @@ const App = () => (
   </Router>
 );
 
-export default App;
+export default hot(App);
