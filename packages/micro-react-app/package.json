@@ -27,7 +27,8 @@
   "dependencies": {
     "@lzygmanski/micro-react-module": "^0.0.0",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@lzygmanski/micro-react-config": "^0.0.0",
