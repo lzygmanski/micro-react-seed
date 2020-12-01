@@ -6,6 +6,20 @@
 
 ### Babel config
 
+In your jest.config.js
+
+```js
+const baseConfig = require('@lzygmanski/micro-react-config/lib/jest.config');
+
+module.exports = {
+  ...baseConfig,
+  setupFilesAfterEnv: ['<rootDir>src/setupTests.js'],
+  // Your internal config
+};
+```
+
+### Babel config
+
 In your babel.config.js
 
 ```js
