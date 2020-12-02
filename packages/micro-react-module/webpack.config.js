@@ -6,6 +6,12 @@ module.exports = (env, argv) => ({
   externals: {
     react: 'react',
     reactDOM: 'react-dom',
+    redux: 'redux',
+    'react-redux': 'react-redux',
+    lodash: {
+      commonjs: 'lodash',
+      amd: 'lodash',
+      root: '_',
+    },
   },
-  // Your internal config
 });

@@ -1,11 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, cleanup } from '@testing-library/react';
 
 import App from './App';
 
+afterEach(cleanup);
+
 describe('App', () => {
   test('renders correctly', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper).toMatchSnapshot();
+    const { asFragment } = render(<App />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

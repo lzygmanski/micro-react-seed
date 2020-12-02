@@ -4,12 +4,10 @@ on:
     branches:
       - main
       - develop
-      - redux
   pull_request:
     branches:
       - main
       - develop
-      - redux
 
 jobs:
   test:

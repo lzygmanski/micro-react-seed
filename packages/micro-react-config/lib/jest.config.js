@@ -10,5 +10,4 @@ module.exports = {
     ),
     '\\.(css|less)$': path.join(__dirname, '../__mocks__/styleMock.js'),
   },
-  snapshotSerializers: ['enzyme-to-json/serializer'],
 };

@@ -1,6 +1,9 @@
 import React from 'react';
+
 import './Module.css';
 
-export default function Module() {
+const Module = () => {
   return <h1 className="module">Hello from micro-react-module</h1>;
-}
+};
+
+export default Module;
