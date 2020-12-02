@@ -1,9 +1,15 @@
 name: CI
 on:
   push:
-    branches: [ develop ]
+    branches:
+      - main
+      - develop
+      - redux
   pull_request:
-    branches: [ develop ]
+    branches:
+      - main
+      - develop
+      - redux
 
 jobs:
   test:
